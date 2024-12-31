@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(44, 62, 80, 0.9);
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 100%;  /* Increase width to 80% of the screen */
+    max-width: 600px;  /* Set a max width to prevent it from getting too wide */
+    height: 500px;  /* Increase height */
+    overflow: hidden; /* Keeps content inside container */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#poem-container {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    max-height: 500px;  /* Increase height for the scrollable area */
+    overflow: hidden;
+    position: relative;
+}
+
+#poem {
+    position: absolute;
+    animation: scrollPoem 10s linear infinite; /* Poem scroll animation */
+}
+
+button {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollPoem {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
